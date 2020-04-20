@@ -9,7 +9,7 @@ android:
     - sys-img-x86-android-27
 before_install:
  - yes | ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-28"
- - emulator -avd test -no-audio -no-window &
+ - emulator -avd Nexus_5X_API_R -no-audio -no-window &
  - android-wait-for-emulator
 before_script:
  - chmod +x gradlew
