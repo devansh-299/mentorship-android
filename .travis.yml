@@ -6,14 +6,13 @@ android:
     - tools
     - build-tools-28.0.3
     - android-28
-    - android-30
-    - sys-img-x86-android-27
+    - sys-img-x86-android-28
 before_install:
  - yes | ${ANDROID_HOME}/tools/bin/sdkmanager "platforms;android-28"
+before_script:
+ - echo no | android create avd --force -n test -t android-28 --abi x86
  - emulator -avd test -no-audio -no-window &
  - android-wait-for-emulator
-before_script:
- - echo no | android create avd --force -n test -t android-30 --abi x86
  - chmod +x gradlew
  - chmod +x generate-apks.sh
 script:
